@@ -1,14 +1,23 @@
+ROFF=/usr/bin/groff
+
 frl.pdf: frl.ps
 	ps2pdf frl.ps
 
 frl.ps: frl.n
 	echo ".Ib" > frl.index
-	groff -fT -mpapersize -dpaper=a4 -P-pa4 -me -w mac -step -mlmacs -M. frl.n >frl.ps 2>>frl.index
-	sort +3 frl.index | grep -v '^troff' > frl.bindex
-	cat frl.n frl.bindex |groff -fT -mpapersize -dpaper=a4 -P-pa4 -me -w mac -step -mlmacs -M. >frl.ps
+	${ROFF} -fT -mpapersize -dpaper=a4 -P-pa4 -me -w mac -step -mpdfmark -mlmacs -M. frl.n >frl.ps 2>>frl.index
+	sort +3 frl.index | grep '^\.I' > frl.bindex
+	${ROFF} -fT -mpapersize -dpaper=a4 -P-pa4 -me -w mac -step -mpdfmark -mlmacs -M. frl.n frl.bindex >frl.ps
+
+frl.bookmarks.pdf: frl.n
+	echo ".Ib" > frl.index
+	${ROFF} -Tpdf -fT -mpapersize -mpdfmark -dpaper=a4 -P-pa4 -me -w mac -step -mlmacs -M. frl.n >frl.bookmarks.pdf 2>>frl.index
+	sort +3 frl.index | grep '^\.I' > frl.bindex
+	${ROFF} -Tpdf -fT -mpapersize -dpaper=a4 -P-pa4 -me -mpdfmark -w mac -step -mlmacs -M. frl.n frl.bindex >frl.bookmarks.pdf
 
 clean:
-	rm frl.bindex
-	rm frl.index
-	rm frl.ps
-	rm frl.pdf
+	rm -f frl.ps
+	rm -f frl.pdf
+	rm -f frl.bookmarks.pdf
+	rm -f frl.bindex
+	rm -f frl.index

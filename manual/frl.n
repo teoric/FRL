@@ -18,10 +18,10 @@
 .el \\fB\\$1\\fP\\$2
 .br
 .nr $i 5n
-." if troff, then put nice index entry, if nroff then we are making an
-." online manual so put out a cryptic lisp expression. If you want to
-." make an nroff version of the manual with index, then you will have
-." to alter the lines below: replace .if t with .if 1   and .if n with .if 0
+.\" if troff, then put nice index entry, if nroff then we are making an
+.\" online manual so put out a cryptic lisp expression. If you want to
+.\" make an nroff version of the manual with index, then you will have
+.\" to alter the lines below: replace .if t with .if 1   and .if n with .if 0
 .if t .tm .In \\n(ch \\n% \\$1 "\\$2"
 .if n .tm (\\$1 ch\\n(ch.r)
 ..
@@ -1022,7 +1022,7 @@ and respectively expand into (atsign s-expression), (percentsign s-expression).
 (exclamation s-expression), (ampersand s-expression), & (*var* s-expression).
 Thus to get the characters @, %, !, & or ?, you
 must precede them with a slash in FRL.
-.sh 2 Global system variables. 19
+.sh 2 Global\ system\ variables. 19
 .pp
 The following global variables are used by FRL:
 fassert, deframe, *frames*, *new-frames*, :user, :frame, :slot,
@@ -1280,5 +1280,3 @@ Rosenberg, S. and Roberts, R.B. "Co-Reference in a Frame Database",IJCAI, 1979.
 .ip
 Stansfield, J. "COMEX: A Support System for a Commodities Expert," AI Memo 423,
 MIT, 1977.
-
-
