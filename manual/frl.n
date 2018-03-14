@@ -1,3 +1,8 @@
+.if d pdfhref \{
+.pdfinfo /Title The FRL Manual
+.pdfinfo /Author R. Bruce Roberts and Ira P. Goldstein
+.pdfinfo /Keywords frames, artificial intelligence
+.\}
 .de Dt
 .ip \s-2DATA\s0: 6
 ..
