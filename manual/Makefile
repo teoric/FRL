@@ -1,4 +1,4 @@
-ROFF=/usr/bin/groff
+ROFF=groff
 
 frl.pdf: frl.ps
 	ps2pdf frl.ps
