@@ -1,8 +1,3 @@
-.if d pdfhref \{
-.pdfinfo /Title The FRL Manual
-.pdfinfo /Author R. Bruce Roberts and Ira P. Goldstein
-.pdfinfo /Keywords frames, artificial intelligence
-.\}
 .de Dt
 .ip \s-2DATA\s0: 6
 ..
@@ -31,6 +26,11 @@
 .if n .tm (\\$1 ch\\n(ch.r)
 ..
 .Lc The\ FRL\ Manual 19
+.if d pdfhref \{
+.pdfinfo /Title The FRL Manual
+.pdfinfo /Author R. Bruce Roberts and Ira P. Goldstein
+.pdfinfo /Keywords frames, artificial intelligence
+.\}
 .ce
 MASSACHUSETTS INSTITUTE OF TECHNOLOGY
 .ce
