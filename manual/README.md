@@ -17,4 +17,8 @@ If your groff is new enough to include the `pdf` device and the `pdfmark` macros
 
 # Warnings
 
-You may get a warning `./frl.bindex:1: name expected (got `\{'): treated as missing`. This seems to be harmless.
+You may get a warning:
+
+    ./frl.bindex:1: name expected (got `\{'): treated as missing`
+
+This seems to be harmless.
